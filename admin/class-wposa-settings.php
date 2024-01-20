@@ -414,7 +414,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$type = isset( $args['type'] ) ? $args['type'] : 'title';
 
 			$html = '';
-			echo wp_kses( $html );
+			echo wp_kses_post( $html );
 		}
 
 
@@ -432,7 +432,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html  = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"placeholder="%6$s"/>', $type, $size, $args['section'], $args['id'], $value, $args['placeholder'] );
 			$html .= $this->get_field_description( $args );
 
-			echo wp_kses( $html );
+			echo wp_kses_post( $html );
 		}
 
 
@@ -470,7 +470,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html .= sprintf( '%1$s</label>', $args['desc'] );
 			$html .= '</fieldset>';
 
-			echo wp_kses( $html, array( 'fieldset', 'label', 'input' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
@@ -492,7 +492,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html .= $this->get_field_description( $args );
 			$html .= '</fieldset>';
 
-			echo wp_kses( $html, array( 'fieldset', 'label', 'input' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
@@ -513,7 +513,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html .= $this->get_field_description( $args );
 			$html .= '</fieldset>';
 
-			echo wp_kses( $html, array( 'fieldset', 'label', 'input' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
@@ -533,7 +533,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html .= sprintf( '</select>' );
 			$html .= $this->get_field_description( $args );
 
-			echo wp_kses( $html, array( 'select', 'option', 'p' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
@@ -549,7 +549,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html  = sprintf( '<textarea rows="5" cols="55" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]">%4$s</textarea>', $size, $args['section'], $args['id'], $value );
 			$html .= $this->get_field_description( $args );
 
-			echo wp_kses( $html, array( 'textarea', 'p' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
@@ -607,7 +607,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
 			$html .= $this->get_field_description( $args );
 
-			echo wp_kses( $html, array( 'input', 'p' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
@@ -629,7 +629,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html .= $this->get_field_description( $args );
 			$html .= '<p class="wpsa-image-preview"><img src=""/></p>';
 
-			echo wp_kses( $html, array( 'input', 'p' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
@@ -645,7 +645,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html  = sprintf( '<input type="password" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
 			$html .= $this->get_field_description( $args );
 
-			echo wp_kses( $html, array( 'input', 'p' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
@@ -661,7 +661,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html  = sprintf( '<input type="text" class="%1$s-text color-picker" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" placeholder="%6$s" />', $size, $args['section'], $args['id'], $value, $args['std'], $args['placeholder'] );
 			$html .= $this->get_field_description( $args );
 
-			echo wp_kses( $html, array( 'input', 'p' ) );
+			echo wp_kses_post( $html );
 		}
 
 
@@ -675,7 +675,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 
 			$html  = '';
 			$html .= '<div class="wpsa-settings-separator"></div>';
-			echo wp_kses( $html, array( 'div' ) );
+			echo wp_kses_post( $html );
 		}
 
 
@@ -723,11 +723,11 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 		}
 
 		public function plugin_page() {
-			echo '<div class="wrap">';
-			echo '<h1>' . esc_html__( 'Link Attributes', 'link-attributes-for-publishers' ) . ' <span style="font-size:50%;">v' . LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION . '</span></h1>';
+			echo wp_kses_post( '<div class="wrap">' );
+			echo wp_kses_post( '<h1>' . esc_html__( 'Link Attributes', 'link-attributes-for-publishers' ) . ' <span style="font-size:50%;">v' . LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION . '</span></h1>' );
 			$this->show_navigation();
 			$this->show_forms();
-			echo '</div>';
+			echo wp_kses_post( '</div>' );
 		}
 
 		/**
@@ -744,7 +744,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 
 			$html .= '</h2>';
 
-			echo wp_kses( $html, array( 'h2', 'a' ) );
+			echo wp_kses_post( $html );
 		}
 
 		/**
