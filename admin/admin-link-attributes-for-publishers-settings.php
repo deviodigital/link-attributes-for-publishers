@@ -29,18 +29,27 @@ if ( class_exists( 'LAFP_OSA' ) ) {
 	 *
 	 * Object for the class `LAFP_OSA`.
 	 */
-	$wposa_obj = new LAFP_OSA();
+	$lafp_obj = new LAFP_OSA();
 
 	// Section: General Settings.
-	$wposa_obj->add_section(
+	$lafp_obj->add_section(
 		array(
 			'id'    => 'wposa_general',
 			'title' => esc_attr__( 'General', 'link-attributes-for-publishers' ),
 		)
 	);
 
+	// Field: Separator.
+	$lafp_obj->add_field(
+		'wposa_general',
+		array(
+			'id'   => 'separator0',
+			'type' => 'separator',
+		)
+	);
+
 	// Field: Nofollow domains.
-	$wposa_obj->add_field(
+	$lafp_obj->add_field(
 		'wposa_general',
 		array(
 			'id'   => 'nofollow_domains',
@@ -51,7 +60,7 @@ if ( class_exists( 'LAFP_OSA' ) ) {
 	);
 
 	// Field: Separator.
-	$wposa_obj->add_field(
+	$lafp_obj->add_field(
 		'wposa_general',
 		array(
 			'id'   => 'separator1',
@@ -60,7 +69,7 @@ if ( class_exists( 'LAFP_OSA' ) ) {
 	);
 
 	// Field: Sponsored domains.
-	$wposa_obj->add_field(
+	$lafp_obj->add_field(
 		'wposa_general',
 		array(
 			'id'   => 'sponsored_domains',
@@ -71,7 +80,7 @@ if ( class_exists( 'LAFP_OSA' ) ) {
 	);
 
 	// Field: Separator.
-	$wposa_obj->add_field(
+	$lafp_obj->add_field(
 		'wposa_general',
 		array(
 			'id'   => 'separator2',
@@ -80,7 +89,7 @@ if ( class_exists( 'LAFP_OSA' ) ) {
 	);
 
 	// Field: UGC domains.
-	$wposa_obj->add_field(
+	$lafp_obj->add_field(
 		'wposa_general',
 		array(
 			'id'   => 'ugc_domains',
@@ -91,7 +100,7 @@ if ( class_exists( 'LAFP_OSA' ) ) {
 	);
 
 	// Field: Separator.
-	$wposa_obj->add_field(
+	$lafp_obj->add_field(
 		'wposa_general',
 		array(
 			'id'   => 'separator3',

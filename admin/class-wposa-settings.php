@@ -464,9 +464,9 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 
 			$html  = '<fieldset>';
-			$html .= sprintf( '<label for="wposa-%1$s[%2$s]">', $args['section'], $args['id'] );
+			$html .= sprintf( '<label for="lafp-%1$s[%2$s]">', $args['section'], $args['id'] );
 			$html .= sprintf( '<input type="hidden" name="%1$s[%2$s]" value="off" />', $args['section'], $args['id'] );
-			$html .= sprintf( '<input type="checkbox" class="checkbox" id="wposa-%1$s[%2$s]" name="%1$s[%2$s]" value="on" %3$s />', $args['section'], $args['id'], checked( $value, 'on', false ) );
+			$html .= sprintf( '<input type="checkbox" class="checkbox" id="lafp-%1$s[%2$s]" name="%1$s[%2$s]" value="on" %3$s />', $args['section'], $args['id'], checked( $value, 'on', false ) );
 			$html .= sprintf( '%1$s</label>', $args['desc'] );
 			$html .= '</fieldset>';
 
@@ -485,8 +485,8 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$html = '<fieldset>';
 			foreach ( $args['options'] as $key => $label ) {
 				$checked = isset( $value[ $key ] ) ? $value[ $key ] : '0';
-				$html   .= sprintf( '<label for="wposa-%1$s[%2$s][%3$s]">', $args['section'], $args['id'], $key );
-				$html   .= sprintf( '<input type="checkbox" class="checkbox" id="wposa-%1$s[%2$s][%3$s]" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked( $checked, $key, false ) );
+				$html   .= sprintf( '<label for="lafp-%1$s[%2$s][%3$s]">', $args['section'], $args['id'], $key );
+				$html   .= sprintf( '<input type="checkbox" class="checkbox" id="lafp-%1$s[%2$s][%3$s]" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked( $checked, $key, false ) );
 				$html   .= sprintf( '%1$s</label><br>', $label );
 			}
 			$html .= $this->get_field_description( $args );
@@ -506,8 +506,8 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 
 			$html = '<fieldset>';
 			foreach ( $args['options'] as $key => $label ) {
-				$html .= sprintf( '<label for="wposa-%1$s[%2$s][%3$s]">', $args['section'], $args['id'], $key );
-				$html .= sprintf( '<input type="radio" class="radio" id="wposa-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked( $value, $key, false ) );
+				$html .= sprintf( '<label for="lafp-%1$s[%2$s][%3$s]">', $args['section'], $args['id'], $key );
+				$html .= sprintf( '<input type="radio" class="radio" id="lafp-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked( $value, $key, false ) );
 				$html .= sprintf( '%1$s</label><br>', $label );
 			}
 			$html .= $this->get_field_description( $args );
@@ -706,15 +706,13 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 		 * @param string $capability
 		 * @param string $menu_slug
 		 * @param callable $function = ''
-		 * @author Ahmad Awais
-		 * @since  [version]
+         * 
+		 * @since  1.0.0
 		 */
-
-		// public function admin_menu( $page_title = 'Page Title', $menu_title = 'Menu Title', $capability = 'manage_options', $menu_slug = 'settings_page', $callable = 'plugin_page' ) {
 		public function admin_menu() {
 			// add_options_page( $page_title, $menu_title, $capability, $menu_slug, array( $this, $callable ) );
 			add_options_page(
-				esc_html__( 'Link Attributes', 'link-attributes-for-publishers' ),
+				esc_html__( 'Link Attributes for Publishers', 'link-attributes-for-publishers' ),
 				esc_html__( 'Link Attributes', 'link-attributes-for-publishers' ),
 				'manage_options',
 				'link_attributes_for_publishers',
@@ -724,10 +722,11 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 
 		public function plugin_page() {
 			echo wp_kses_post( '<div class="wrap">' );
-			echo wp_kses_post( '<h1>' . esc_html__( 'Link Attributes', 'link-attributes-for-publishers' ) . ' <span style="font-size:50%;">v' . LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION . '</span></h1>' );
-			$this->show_navigation();
+			echo wp_kses_post( '<h1>' . esc_html__( 'Link Attributes for Publishers', 'link-attributes-for-publishers' ) . ' <span style="font-size:50%;">v' . LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION . '</span></h1>' );
+			//$this->show_navigation();
 			$this->show_forms();
 			echo wp_kses_post( '</div>' );
+            echo '<style type="text/css">#wposa_general h2 {display: none;}</style>';
 		}
 
 		/**
@@ -757,13 +756,13 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			<div class="metabox-holder">
 				<?php foreach ( $this->sections_array as $form ) { ?>
 					<!-- style="display: none;" -->
-					<div id="<?php echo $form['id']; ?>" class="group" >
+					<div id="<?php echo $form['id']; ?>" class="group">
 						<form method="post" action="options.php">
 							<?php
-							do_action( 'wsa_form_top_' . $form['id'], $form );
+							do_action( 'lafp_form_top_' . $form['id'], $form );
 							settings_fields( $form['id'] );
 							do_settings_sections( $form['id'] );
-							do_action( 'wsa_form_bottom_' . $form['id'], $form );
+							do_action( 'lafp_form_bottom_' . $form['id'], $form );
 							?>
 							<div style="padding-left: 10px">
 								<?php submit_button( null, 'primary', 'submit_'.$form['id'] ); ?>
