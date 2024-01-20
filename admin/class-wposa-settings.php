@@ -723,6 +723,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 		public function plugin_page() {
 			echo wp_kses_post( '<div class="wrap">' );
 			echo wp_kses_post( '<h1>' . esc_html__( 'Link Attributes for Publishers', 'link-attributes-for-publishers' ) . ' <span style="font-size:50%;">v' . LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION . '</span></h1>' );
+            echo wp_kses_post( '<p><span>' . esc_html__( 'Brought to you by', 'link-attributes-for-publishers' ) . ': <a href="https://deviodigital.com" target="_blank">Devio Digital</a></span></p>' );
 			//$this->show_navigation();
 			$this->show_forms();
 			echo wp_kses_post( '</div>' );
