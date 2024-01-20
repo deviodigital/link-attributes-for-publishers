@@ -1,1 +1,3 @@
-# link-attributes-for-wordpress
+# Link Attributes for WordPress
+
+Plugin info coming soon.
