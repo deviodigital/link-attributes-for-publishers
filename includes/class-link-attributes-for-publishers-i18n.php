@@ -13,6 +13,11 @@
  * @subpackage Link_Attributes_For_Publishers/includes
  */
 
+// If this file is called directly, abort.
+ if ( ! defined( 'WPINC' ) ) {
+	wp_die();
+}
+
 /**
  * Define the internationalization functionality.
  *

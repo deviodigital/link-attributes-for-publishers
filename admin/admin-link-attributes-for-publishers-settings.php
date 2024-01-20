@@ -11,6 +11,11 @@
  * @since      1.0.0
  */
 
+// If this file is called directly, abort.
+ if ( ! defined( 'WPINC' ) ) {
+	wp_die();
+}
+
 /**
  * Actions/Filters
  *
@@ -18,13 +23,13 @@
  *
  * @since  1.0.0
  */
-if ( class_exists( 'WP_OSA' ) ) {
+if ( class_exists( 'LAFP_OSA' ) ) {
 	/**
 	 * Object Instantiation.
 	 *
-	 * Object for the class `WP_OSA`.
+	 * Object for the class `LAFP_OSA`.
 	 */
-	$wposa_obj = new WP_OSA();
+	$wposa_obj = new LAFP_OSA();
 
 	// Section: General Settings.
 	$wposa_obj->add_section(

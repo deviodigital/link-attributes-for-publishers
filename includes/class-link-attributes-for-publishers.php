@@ -14,6 +14,11 @@
  * @since      1.0.0
  */
 
+// If this file is called directly, abort.
+ if ( ! defined( 'WPINC' ) ) {
+	wp_die();
+}
+
 /**
  * The core plugin class.
  *

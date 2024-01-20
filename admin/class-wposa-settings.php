@@ -1,11 +1,11 @@
 <?php
 /**
- * Main Class file for `WP_OSA`
+ * Main Class file for `LAFP_OSA`
  *
  * Main class that deals with all other classes.
  *
  * @since   1.0.0
- * @package WPOSA
+ * @package LAFPOSA
  */
 
 // Exit if accessed directly.
@@ -14,16 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * WP_OSA.
+ * LAFP_OSA.
  *
  * WP Settings API Class.
  *
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'WP_OSA' ) ) :
+if ( ! class_exists( 'LAFP_OSA' ) ) :
 
-	class WP_OSA {
+	class LAFP_OSA {
 
 		/**
 		 * Sections array.
@@ -414,7 +414,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$type = isset( $args['type'] ) ? $args['type'] : 'title';
 
 			$html = '';
-			echo $html;
+			echo wp_kses( $html );
 		}
 
 
@@ -432,7 +432,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html  = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"placeholder="%6$s"/>', $type, $size, $args['section'], $args['id'], $value, $args['placeholder'] );
 			$html .= $this->get_field_description( $args );
 
-			echo $html;
+			echo wp_kses( $html );
 		}
 
 
@@ -470,7 +470,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html .= sprintf( '%1$s</label>', $args['desc'] );
 			$html .= '</fieldset>';
 
-			echo $html;
+			echo wp_kses( $html, array( 'fieldset', 'label', 'input' ) );
 		}
 
 		/**
@@ -492,7 +492,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html .= $this->get_field_description( $args );
 			$html .= '</fieldset>';
 
-			echo $html;
+			echo wp_kses( $html, array( 'fieldset', 'label', 'input' ) );
 		}
 
 		/**
@@ -513,7 +513,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html .= $this->get_field_description( $args );
 			$html .= '</fieldset>';
 
-			echo $html;
+			echo wp_kses( $html, array( 'fieldset', 'label', 'input' ) );
 		}
 
 		/**
@@ -533,7 +533,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html .= sprintf( '</select>' );
 			$html .= $this->get_field_description( $args );
 
-			echo $html;
+			echo wp_kses( $html, array( 'select', 'option', 'p' ) );
 		}
 
 		/**
@@ -549,7 +549,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html  = sprintf( '<textarea rows="5" cols="55" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]">%4$s</textarea>', $size, $args['section'], $args['id'], $value );
 			$html .= $this->get_field_description( $args );
 
-			echo $html;
+			echo wp_kses( $html, array( 'textarea', 'p' ) );
 		}
 
 		/**
@@ -601,14 +601,13 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
 			$id    = $args['section'] . '[' . $args['id'] . ']';
 			$label = isset( $args['options']['button_label'] ) ?
-			$args['options']['button_label'] :
-			__( 'Choose File' );
+			$args['options']['button_label'] : __( 'Choose File' );
 
 			$html  = sprintf( '<input type="text" class="%1$s-text wpsa-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
 			$html .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
 			$html .= $this->get_field_description( $args );
 
-			echo $html;
+			echo wp_kses( $html, array( 'input', 'p' ) );
 		}
 
 		/**
@@ -630,7 +629,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html .= $this->get_field_description( $args );
 			$html .= '<p class="wpsa-image-preview"><img src=""/></p>';
 
-			echo $html;
+			echo wp_kses( $html, array( 'input', 'p' ) );
 		}
 
 		/**
@@ -646,7 +645,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html  = sprintf( '<input type="password" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
 			$html .= $this->get_field_description( $args );
 
-			echo $html;
+			echo wp_kses( $html, array( 'input', 'p' ) );
 		}
 
 		/**
@@ -662,7 +661,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			$html  = sprintf( '<input type="text" class="%1$s-text color-picker" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" placeholder="%6$s" />', $size, $args['section'], $args['id'], $value, $args['std'], $args['placeholder'] );
 			$html .= $this->get_field_description( $args );
 
-			echo $html;
+			echo wp_kses( $html, array( 'input', 'p' ) );
 		}
 
 
@@ -676,7 +675,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 
 			$html  = '';
 			$html .= '<div class="wpsa-settings-separator"></div>';
-			echo $html;
+			echo wp_kses( $html, array( 'div' ) );
 		}
 
 
@@ -745,7 +744,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 
 			$html .= '</h2>';
 
-			echo $html;
+			echo wp_kses( $html, array( 'h2', 'a' ) );
 		}
 
 		/**
@@ -767,7 +766,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 							do_action( 'wsa_form_bottom_' . $form['id'], $form );
 							?>
 							<div style="padding-left: 10px">
-								<?php submit_button(null, 'primary', 'submit_'.$form['id']); ?>
+								<?php submit_button( null, 'primary', 'submit_'.$form['id'] ); ?>
 							</div>
 						</form>
 					</div>
@@ -914,6 +913,6 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			</style>
 			<?php
 		}
-	} // WP_OSA ended.
+	} // LAFP_OSA ended.
 
 endif;

@@ -10,6 +10,11 @@
  * @subpackage Link_Attributes_For_Publishers/includes
  */
 
+// If this file is called directly, abort.
+ if ( ! defined( 'WPINC' ) ) {
+	wp_die();
+}
+
 /**
  * Register all actions and filters for the plugin.
  *

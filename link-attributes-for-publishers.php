@@ -44,7 +44,7 @@ define( 'LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION', '1.0.0' );
  * @since  1.0.0
  * @return void
  */
-function activate_link_attributes_for_publishers() {
+function lafp_activate_link_attributes_for_publishers() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-link-attributes-for-publishers-activator.php';
 	Link_Attributes_For_Publishers_Activator::activate();
 }
@@ -56,13 +56,13 @@ function activate_link_attributes_for_publishers() {
  * @since  1.0.0
  * @return void
  */
-function deactivate_link_attributes_for_publishers() {
+function lafp_deactivate_link_attributes_for_publishers() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-link-attributes-for-publishers-deactivator.php';
 	Link_Attributes_For_Publishers_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_link_attributes_for_publishers' );
-register_deactivation_hook( __FILE__, 'deactivate_link_attributes_for_publishers' );
+register_activation_hook( __FILE__, 'lafp_activate_link_attributes_for_publishers' );
+register_deactivation_hook( __FILE__, 'lafp_deactivate_link_attributes_for_publishers' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -80,10 +80,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-link-attributes-for-publis
  * @since  1.0.0
  * @return void
  */
-function run_link_attributes_for_publishers() {
+function lafp_run_plugin() {
 
 	$plugin = new Link_Attributes_For_Publishers();
 	$plugin->run();
 
 }
-run_link_attributes_for_publishers();
+lafp_run_plugin();
