@@ -559,7 +559,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 		 * @return string
 		 */
 		function callback_html( $args ) {
-			echo $this->get_field_description( $args );
+			echo wp_kses_post( $this->get_field_description( $args ) );
 		}
 
 		/**
@@ -572,7 +572,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			$value = $this->get_option( $args['id'], $args['section'], $args['std'] );
 			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : '500px';
 
-			echo '<div style="max-width: ' . $size . ';">';
+			echo wp_kses_post( '<div style="max-width: ' . $size . ';">' );
 
 			$editor_settings = array(
 				'teeny'         => true,
@@ -585,9 +585,9 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 
 			wp_editor( $value, $args['section'] . '-' . $args['id'], $editor_settings );
 
-			echo '</div>';
+			echo wp_kses_post( '</div>' );
 
-			echo $this->get_field_description( $args );
+			echo wp_kses_post( $this->get_field_description( $args ) );
 		}
 
 		/**
@@ -727,7 +727,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			//$this->show_navigation();
 			$this->show_forms();
 			echo wp_kses_post( '</div>' );
-            echo '<style type="text/css">#wposa_general h2 {display: none;}</style>';
+            echo wp_kses( '<style type="text/css">#wposa_general h2 {display: none;}</style>', lafp_allowed_tags() );
 		}
 
 		/**
@@ -757,7 +757,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 			<div class="metabox-holder">
 				<?php foreach ( $this->sections_array as $form ) { ?>
 					<!-- style="display: none;" -->
-					<div id="<?php echo $form['id']; ?>" class="group">
+					<div id="<?php echo wp_kses_post( $form['id'] ); ?>" class="group">
 						<form method="post" action="options.php">
 							<?php
 							do_action( 'lafp_form_top_' . $form['id'], $form );
