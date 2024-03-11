@@ -205,7 +205,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 
 					// Create the callback for description.
 					$callback = function() use ( $section ) {
-						echo str_replace( '"', '\"', $section['desc'] );
+						echo esc_html( str_replace( '"', '\"', $section['desc'] ) );
 					};
 
 				} elseif ( isset( $section['callback'] ) ) {
