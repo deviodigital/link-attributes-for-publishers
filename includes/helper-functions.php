@@ -26,9 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array
  */
 function lafp_attributes_array() {
-    $nofollow_domains  = array();
-    $sponsored_domains = array();
-    $ugc_domains       = array();
+    $nofollow_domains  = [];
+    $sponsored_domains = [];
+    $ugc_domains       = [];
     $rows_nofollow     = '';
     $rows_sponsored    = '';
     $rows_ugc          = '';
@@ -61,11 +61,11 @@ function lafp_attributes_array() {
     $rows_ugc = explode( ', ', $rows_ugc );
 
     // Create final array for JS file.
-    $array = array(
+    $array = [
         'nofollow_domains'  => $rows_nofollow,
         'sponsored_domains' => $rows_sponsored,
         'ugc_domains'       => $rows_ugc
-    );
+    ];
 
     return apply_filters( 'lafp_attributes_array', $array );
 }
@@ -83,51 +83,51 @@ function lafp_attributes_array() {
 function lafp_allowed_tags() {
     $my_allowed = wp_kses_allowed_html( 'post' );
     // iframe
-    $my_allowed['iframe'] = array(
-        'src'             => array(),
-        'height'          => array(),
-        'width'           => array(),
-        'frameborder'     => array(),
-        'allowfullscreen' => array(),
-    );
+    $my_allowed['iframe'] = [
+        'src'             => [],
+        'height'          => [],
+        'width'           => [],
+        'frameborder'     => [],
+        'allowfullscreen' => [],
+    ];
     // form fields - input
-    $my_allowed['input'] = array(
-        'class' => array(),
-        'id'    => array(),
-        'name'  => array(),
-        'value' => array(),
-        'type'  => array(),
-    );
+    $my_allowed['input'] = [
+        'class' => [],
+        'id'    => [],
+        'name'  => [],
+        'value' => [],
+        'type'  => [],
+    ];
     // select
-    $my_allowed['select'] = array(
-        'class' => array(),
-        'id'    => array(),
-        'name'  => array(),
-        'value' => array(),
-        'type'  => array(),
-    );
+    $my_allowed['select'] = [
+        'class' => [],
+        'id'    => [],
+        'name'  => [],
+        'value' => [],
+        'type'  => [],
+    ];
     // select options
-    $my_allowed['option'] = array(
-        'selected' => array(),
-        'value'    => array(),
-    );
+    $my_allowed['option'] = [
+        'selected' => [],
+        'value'    => [],
+    ];
     // style
-    $my_allowed['style'] = array(
-        'types' => array(),
-    );
+    $my_allowed['style'] = [
+        'types' => [],
+    ];
     // SVG.
-    $my_allowed['svg'] = array(
-        'xmlns'          => array(),
-        'width'          => array(),
-        'height'         => array(),
-        'viewbox'        => array(),
-        'class'          => array(),
-        'aria-hidden'    => array(),
-        'aria-labeledby' => array()
-    );
-    $my_allowed['path'] = array(
-        'd'    => array(),
-        'fill' => array()
-    );
+    $my_allowed['svg'] = [
+        'xmlns'          => [],
+        'width'          => [],
+        'height'         => [],
+        'viewbox'        => [],
+        'class'          => [],
+        'aria-hidden'    => [],
+        'aria-labeledby' => []
+    ];
+    $my_allowed['path'] = [
+        'd'    => [],
+        'fill' => []
+    ];
     return $my_allowed;
 }

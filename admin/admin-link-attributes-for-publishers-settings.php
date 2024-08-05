@@ -33,79 +33,79 @@ if ( class_exists( 'LAFP_OSA' ) ) {
 
 	// Section: General Settings.
 	$lafp_obj->add_section(
-		array(
+		[
 			'id'    => 'wposa_general',
 			'title' => esc_attr__( 'General', 'link-attributes-for-publishers' ),
-		)
+		]
 	);
 
 	// Field: Separator.
 	$lafp_obj->add_field(
 		'wposa_general',
-		array(
+		[
 			'id'   => 'separator0',
 			'type' => 'separator',
-		)
+		]
 	);
 
 	// Field: Nofollow domains.
 	$lafp_obj->add_field(
 		'wposa_general',
-		array(
+		[
 			'id'   => 'nofollow_domains',
 			'type' => 'textarea',
 			'name' => esc_attr__( 'Nofollow Domains', 'link-attributes-for-publishers' ),
 			'desc' => esc_attr__( 'Separate by comma. Example: google.com, amzn.to', 'link-attributes-for-publishers' ),
-		)
+		]
 	);
 
 	// Field: Separator.
 	$lafp_obj->add_field(
 		'wposa_general',
-		array(
+		[
 			'id'   => 'separator1',
 			'type' => 'separator',
-		)
+		]
 	);
 
 	// Field: Sponsored domains.
 	$lafp_obj->add_field(
 		'wposa_general',
-		array(
+		[
 			'id'   => 'sponsored_domains',
 			'type' => 'textarea',
 			'name' => esc_attr__( 'Sponsored Domains', 'link-attributes-for-publishers' ),
 			'desc' => esc_attr__( 'Separate by comma. Example: google.com, amzn.to', 'link-attributes-for-publishers' ),
-		)
+		]
 	);
 
 	// Field: Separator.
 	$lafp_obj->add_field(
 		'wposa_general',
-		array(
+		[
 			'id'   => 'separator2',
 			'type' => 'separator',
-		)
+		]
 	);
 
 	// Field: UGC domains.
 	$lafp_obj->add_field(
 		'wposa_general',
-		array(
+		[
 			'id'   => 'ugc_domains',
 			'type' => 'textarea',
 			'name' => esc_attr__( 'UGC Domains', 'link-attributes-for-publishers' ),
 			'desc' => esc_attr__( 'Separate by comma. Example: google.com, amzn.to', 'link-attributes-for-publishers' ),
-		)
+		]
 	);
 
 	// Field: Separator.
 	$lafp_obj->add_field(
 		'wposa_general',
-		array(
+		[
 			'id'   => 'separator3',
 			'type' => 'separator',
-		)
+		]
 	);
 
 }

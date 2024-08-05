@@ -35,21 +35,21 @@ class Link_Attributes_For_Publishers_Public {
 	 * The ID of this plugin.
 	 *
 	 * @access private
-	 * @var    string  $_plugin_name - The ID of this plugin.
+	 * @var    string  $plugin_name - The ID of this plugin.
      * 
 	 * @since 1.0.0
 	 */
-	private $_plugin_name;
+	private $plugin_name;
 
 	/**
 	 * The version of this plugin.
 	 *
 	 * @access private
-	 * @var    string  $_version - The current version of this plugin.
+	 * @var    string  $version - The current version of this plugin.
      * 
 	 * @since 1.0.0
 	 */
-	private $_version;
+	private $version;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -74,7 +74,7 @@ class Link_Attributes_For_Publishers_Public {
 	 */
 	public function enqueue_styles() {
         // Public - CSS.
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/link-attributes-for-publishers-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/link-attributes-for-publishers-public.css', [], $this->version, 'all' );
 	}
 
 	/**
@@ -85,7 +85,7 @@ class Link_Attributes_For_Publishers_Public {
 	 */
 	public function enqueue_scripts() {
         // Public - JS.
-		//wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/link-attributes-for-publishers-public.js', array( 'jquery' ), time(), false );
+		//wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/link-attributes-for-publishers-public.js', [ 'jquery' ], time(), false );
 	}
 
 }

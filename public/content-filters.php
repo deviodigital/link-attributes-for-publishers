@@ -27,7 +27,7 @@ function lafp_add_custom_rel_to_links( $content ) {
     // Loop through each of the attributes from the admin settings.
     foreach ( lafp_attributes_array() as $key => $attributes ) {
         // Sponsored domains.
-        if ( in_array( $key, array( 'sponsored_domains', 'ugc_domains', 'nofollow_domains' ) ) ) {
+        if ( in_array( $key, [ 'sponsored_domains', 'ugc_domains', 'nofollow_domains' ] ) ) {
             $rel = str_replace( '_domains', '', $key );
             // Loop through attributes and use their domains.
             foreach ( $attributes as $domains ) {
