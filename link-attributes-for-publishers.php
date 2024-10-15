@@ -32,6 +32,18 @@ if ( ! defined( 'WPINC' ) ) {
 	wp_die();
 }
 
+require 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/deviodigital/link-attributes-for-publishers',
+	__FILE__,
+	'link-attributes-for-publishers'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch( 'main' );
+
 /**
  * Current plugin version.
  */
