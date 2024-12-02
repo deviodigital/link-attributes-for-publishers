@@ -41,7 +41,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'link-attributes-for-publishers'
 );
 
-//Set the branch that contains the stable release.
+// Set the branch that contains the stable release.
 $myUpdateChecker->setBranch( 'main' );
 
 /**

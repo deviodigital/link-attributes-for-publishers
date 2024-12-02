@@ -82,7 +82,7 @@ function lafp_attributes_array() {
  */
 function lafp_allowed_tags() {
     $my_allowed = wp_kses_allowed_html( 'post' );
-    // iframe
+    // iframe.
     $my_allowed['iframe'] = [
         'src'             => [],
         'height'          => [],
@@ -98,7 +98,7 @@ function lafp_allowed_tags() {
         'value' => [],
         'type'  => [],
     ];
-    // select
+    // select.
     $my_allowed['select'] = [
         'class' => [],
         'id'    => [],
@@ -106,12 +106,12 @@ function lafp_allowed_tags() {
         'value' => [],
         'type'  => [],
     ];
-    // select options
+    // select options.
     $my_allowed['option'] = [
         'selected' => [],
         'value'    => [],
     ];
-    // style
+    // style.
     $my_allowed['style'] = [
         'types' => [],
     ];
