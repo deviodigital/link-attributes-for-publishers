@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Link Attributes for Publishers\n"
+"POT-Creation-Date: 2025-02-12 23:06-0500\n"
+"PO-Revision-Date: 2025-02-12 23:07-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: link-attributes-for-publishers.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: admin/admin-link-attributes-for-publishers-settings.php:38
+msgid "General"
+msgstr "Général"
+
+#: admin/admin-link-attributes-for-publishers-settings.php:57
+msgid "Nofollow Domains"
+msgstr "Domaines à ne pas suivre"
+
+#: admin/admin-link-attributes-for-publishers-settings.php:58
+#: admin/admin-link-attributes-for-publishers-settings.php:78
+#: admin/admin-link-attributes-for-publishers-settings.php:98
+msgid "Separate by comma. Example: google.com, amzn.to"
+msgstr "Séparer par une virgule. Exemple : google.com, amzn.to"
+
+#: admin/admin-link-attributes-for-publishers-settings.php:77
+msgid "Sponsored Domains"
+msgstr "Domaines sponsorisés"
+
+#: admin/admin-link-attributes-for-publishers-settings.php:97
+msgid "UGC Domains"
+msgstr "Domaines UGC"
+
+#: admin/class-wposa-settings.php:604
+msgid "Choose File"
+msgstr "Choisissez un fichier"
+
+#: admin/class-wposa-settings.php:625
+msgid "Choose Image"
+msgstr "Choisir une image"
+
+#. Plugin Name of the plugin/theme
+#: admin/class-wposa-settings.php:715 admin/class-wposa-settings.php:725
+msgid "Link Attributes for Publishers"
+msgstr "Attributs de liens pour les éditeurs"
+
+#: admin/class-wposa-settings.php:716
+msgid "Link Attributes"
+msgstr "Attributs du lien"
+
+#: admin/class-wposa-settings.php:727
+msgid "Support"
+msgstr "Support"
+
+#: admin/class-wposa-settings.php:730
+msgid "Documentation"
+msgstr "Documentation"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/deviodigital/link-attributes-for-publishers"
+msgstr "https://github.com/deviodigital/link-attributes-for-publishers"
+
+#. Description of the plugin/theme
+msgid "Add custom link attributes to the external URL's of your choice"
+msgstr "Ajouter des attributs de lien personnalisés aux URL externes de votre choix"
+
+#. Author of the plugin/theme
+msgid "Devio Digital"
+msgstr "Devio Digital"
+
+#. Author URI of the plugin/theme
+msgid "https://deviodigital.com"
+msgstr "https://deviodigital.com"
