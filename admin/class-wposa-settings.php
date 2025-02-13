@@ -722,9 +722,14 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 
 		public function plugin_page() {
 			echo wp_kses_post( '<div class="wrap">' );
-			echo wp_kses_post( '<h1>' . esc_html__( 'Link Attributes for Publishers', 'link-attributes-for-publishers' ) . ' <span style="font-size:50%;">v' . LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION . '</span></h1>' );
-            echo wp_kses_post( '<p><span>' . esc_html__( 'Brought to you by', 'link-attributes-for-publishers' ) . ': <a href="https://deviodigital.com" target="_blank">Devio Digital</a></span></p>' );
-			//$this->show_navigation();
+			echo '<h1>' . esc_html__( 'Link Attributes for Publishers', 'link-attributes-for-publishers' ) . '
+                <a id="lafp-support-btn" href="https://robertdevore.com/contact/" target="_blank" class="button button-alt" style="margin-left: 10px;">
+                    <span class="dashicons dashicons-format-chat" style="vertical-align: middle;"></span>' . esc_html__( 'Support', 'link-attributes-for-publishers' ) . '
+                </a>
+                <a id="lafp-docs-btn" href="https://deviodigital/documentation/" target="_blank" class="button button-alt" style="margin-left: 5px;">
+                    <span class="dashicons dashicons-media-document" style="vertical-align: middle;"></span>' . esc_html__( 'Documentation', 'link-attributes-for-publishers' ) . '
+                </a>
+            </h1>';
 			$this->show_forms();
 			echo wp_kses_post( '</div>' );
             echo wp_kses( '<style type="text/css">#wposa_general h2 {display: none;}</style>', lafp_allowed_tags() );

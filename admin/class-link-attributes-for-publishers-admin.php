@@ -71,7 +71,7 @@ class Link_Attributes_For_Publishers_Admin {
 	 */
 	public function enqueue_styles() {
         // Admin - CSS.
-		//wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/link-attributes-for-publishers-admin.css', [], $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/link-attributes-for-publishers-admin.css', [], $this->version, 'all' );
 	}
 
 	/**

@@ -53,9 +53,7 @@ use RobertDevore\WPComCheck\WPComPluginHandler;
 
 new WPComPluginHandler( plugin_basename( __FILE__ ), 'https://robertdevore.com/why-this-plugin-doesnt-support-wordpress-com-hosting/' );
 
-/**
- * Current plugin version.
- */
+// Current plugin version.
 define( 'LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION', '1.0.0' );
 
 /**

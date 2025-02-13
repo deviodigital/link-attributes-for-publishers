@@ -2,3 +2,14 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+#lafp-support-btn,
+#lafp-docs-btn {
+    line-height: 22px;
+    float: right;
+    margin-left: 12px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 6;
+}
