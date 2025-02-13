@@ -18,7 +18,7 @@
  * Plugin Name:       Link Attributes for Publishers
  * Plugin URI:        https://github.com/deviodigital/link-attributes-for-publishers
  * Description:       Add custom link attributes to the external URL's of your choice
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Devio Digital
  * Author URI:        https://deviodigital.com
  * License:           GPL-2.0+
@@ -54,7 +54,7 @@ use RobertDevore\WPComCheck\WPComPluginHandler;
 new WPComPluginHandler( plugin_basename( __FILE__ ), 'https://robertdevore.com/why-this-plugin-doesnt-support-wordpress-com-hosting/' );
 
 // Current plugin version.
-define( 'LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION', '1.0.0' );
+define( 'LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION', '1.0.1' );
 
 /**
  * The code that runs during plugin activation.

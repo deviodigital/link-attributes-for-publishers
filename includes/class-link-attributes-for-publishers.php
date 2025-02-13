@@ -76,7 +76,7 @@ class Link_Attributes_For_Publishers {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'link-attributes-for-publishers';
-        $this->version     = '1.0.0';
+        $this->version     = '1.0.1';
 
 		if ( defined( 'LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION' ) ) {
 			$this->version = LINK_ATTRIBUTES_FOR_PUBLISHERS_VERSION;
