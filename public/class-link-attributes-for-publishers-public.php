@@ -74,7 +74,7 @@ class Link_Attributes_For_Publishers_Public {
 	 */
 	public function enqueue_styles() {
         // Public - CSS.
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/link-attributes-for-publishers-public.css', [], $this->version, 'all' );
+		//wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/link-attributes-for-publishers-public.css', [], $this->version, 'all' );
 	}
 
 	/**
