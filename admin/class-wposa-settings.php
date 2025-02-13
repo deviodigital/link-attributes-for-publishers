@@ -723,7 +723,7 @@ if ( ! class_exists( 'LAFP_OSA' ) ) :
 		public function plugin_page() {
 			echo wp_kses_post( '<div class="wrap">' );
 			echo '<h1>' . esc_html__( 'Link Attributes for Publishers', 'link-attributes-for-publishers' ) . '
-                <a id="lafp-support-btn" href="https://robertdevore.com/contact/" target="_blank" class="button button-alt" style="margin-left: 10px;">
+                <a id="lafp-support-btn" href="https://deviodigital.com/contact/" target="_blank" class="button button-alt" style="margin-left: 10px;">
                     <span class="dashicons dashicons-format-chat" style="vertical-align: middle;"></span>' . esc_html__( 'Support', 'link-attributes-for-publishers' ) . '
                 </a>
                 <a id="lafp-docs-btn" href="https://deviodigital/documentation/" target="_blank" class="button button-alt" style="margin-left: 5px;">
